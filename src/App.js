@@ -1,23 +1,127 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import { getTranslation } from './services/api';
+import TranslatedBox from './components/TranslatedBox';
+import TranslationBox from './components/TranslationBox';
+import SelectBlock from './components/SelectBlock';
+import { languages } from './constants';
 
 function App() {
+  const [text, setText] = useState('');
+  const [translationArr, setTranslationArr] = useState([]);
+  const [translatedArr, setTranslatedArr] = useState([]);
+  const [fromLanguage, setFromLanguage] = useState('zh-HK');
+  const [toLanguage, setToLanguage] = useState('zh-CN');
+  const [loading, setLoading] = useState(false);
+
+  const onAddClick = () => {
+    setTranslationArr([...translationArr, {
+      from: fromLanguage,
+      to: toLanguage,
+      text,
+    }]);
+    setText('');
+  };
+
+  const onRemoveClick = (index) => {
+    const array = [...translationArr];
+    array.splice(index, 1);
+    setTranslationArr(array);
+  };
+
+  const onTranslateClick = () => {
+    setLoading(true);
+    let request = [];
+    translationArr.forEach(text => request.push(getTranslation(text.text, text.from, text.to)))
+
+    Promise.all(request)
+      .then((res) => {
+        console.log(translationArr);
+        console.log(res);
+        setTranslatedArr(res);
+        return res;
+      })
+      .finally(() => setLoading(false));
+  };
+
+  const onResetClick = () => {
+    setTranslationArr([]);
+    setTranslatedArr([]);
+    setText('');
+  };
+
+  const onEditConfirmClick = (index, info) => {
+    const array = [...translationArr];
+    array[index] = info;
+    setTranslationArr(array);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="left-container">
+          <div className="input-section-wrapper">
+            <input
+              type="text"
+              className="text-input"
+              value={text}
+              onChange={e => setText(e.target.value)}
+              placeholder="Type here..."
+            />
+            <button className="add-button" onClick={onAddClick}>
+              <img src="/images/plus.svg" className="add-icon" alt="plus-icon" />
+            </button>
+          </div>
+          <div className="row">
+            <SelectBlock
+              label="From:"
+              options={languages}
+              initIndex={0}
+              setValue={setFromLanguage}
+            />
+          </div>
+          <div className="row">
+            <SelectBlock
+              label="To:"
+              options={languages}
+              initIndex={1}
+              setValue={setToLanguage}
+            />
+          </div>
+          <div className="row">
+            <button onClick={onTranslateClick} className="translate-button">Translate</button>
+            <button onClick={onResetClick} className="reset-button">Reset</button>
+          </div>
+          <div className="boxes-wrapper">
+            {translationArr.map((item, idx) => (
+              <TranslationBox 
+                index={idx}
+                item={item}
+                onRemoveClick={onRemoveClick}
+                onEditConfirmClick={onEditConfirmClick}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="right-container">
+          <div className="boxes-wrapper">
+            {loading ? (<p>Loading...</p>) : (
+              <>
+                {translatedArr.map((item, idx) => (
+                  <TranslatedBox
+                    key={idx}
+                    fromLanguage={languages.find(lang => lang.value === item.from).label}
+                    toLanguage={languages.find(lang => lang.value === item.to).label}
+                    originalText={item.original}
+                    translatedText={item.translation}
+                  />
+                ))}
+              </>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
