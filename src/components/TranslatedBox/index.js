@@ -19,7 +19,7 @@ const TranslatedBox = ({
                     <CopyToClipboard text={translatedText}
                         onCopy={() => setCopied(true)}>
                         <button className="copy-button">
-                            <img src="../../images/copy.svg" className="copy-icon" alt="copy" />
+                            <img src="https://kylekaikai24.github.io/batch-translation-web/images/copy.svg" className="copy-icon" alt="copy" />
                         </button>
                     </CopyToClipboard>
                 </div>

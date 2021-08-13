@@ -47,7 +47,7 @@ const TranslationBox = ({
                                 setIsEditMode(false)
                             }}
                         >
-                            <img src="../../images/check.svg" className="tick-icon" alt="tick-icon" />
+                            <img src="https://kylekaikai24.github.io/batch-translation-web/images/check.svg" className="tick-icon" alt="tick-icon" />
                         </button>
                     </>
                 ) : (
@@ -59,12 +59,12 @@ const TranslationBox = ({
                                 {languages.find(lang => lang.value === item.from).label} &#8594; {languages.find(lang => lang.value === item.to).label}
                             </p>
                             <button className="edit-button" onClick={() => setIsEditMode(true)}>
-                                <img src="../../images/edit.svg" className="edit-icon" alt="edit-icon" />
+                                <img src="https://kylekaikai24.github.io/batch-translation-web/images/edit.svg" className="edit-icon" alt="edit-icon" />
                             </button>
                         </div>
                         <p className="text">{item.text}</p>
                         <button className="remove-button" onClick={() => onRemoveClick(index)}>
-                            <img src="../../images/remove.svg" className="remove-icon" alt="remove-icon" />
+                            <img src="https://kylekaikai24.github.io/batch-translation-web/images/remove.svg" className="remove-icon" alt="remove-icon" />
                         </button>
                     </>
                 )
