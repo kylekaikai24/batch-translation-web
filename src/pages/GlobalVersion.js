@@ -71,7 +71,7 @@ const GlobalVersion = () => {
                         placeholder="Type here..."
                     />
                     <button className="add-button" onClick={onAddClick}>
-                        <img src="/images/plus.svg" className="add-icon" alt="plus-icon" />
+                        <img src="../images/plus.svg" className="add-icon" alt="plus-icon" />
                     </button>
                 </div>
                 <div className="row">
