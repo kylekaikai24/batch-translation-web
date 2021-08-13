@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/batch-translation-web/static/css/main.c04ed671.chunk.css",
+    "main.js": "/batch-translation-web/static/js/main.9e5edeba.chunk.js",
+    "main.js.map": "/batch-translation-web/static/js/main.9e5edeba.chunk.js.map",
+    "runtime-main.js": "/batch-translation-web/static/js/runtime-main.8bcfafe6.js",
+    "runtime-main.js.map": "/batch-translation-web/static/js/runtime-main.8bcfafe6.js.map",
+    "static/js/2.dfb25c4f.chunk.js": "/batch-translation-web/static/js/2.dfb25c4f.chunk.js",
+    "static/js/2.dfb25c4f.chunk.js.map": "/batch-translation-web/static/js/2.dfb25c4f.chunk.js.map",
+    "static/js/3.390f639f.chunk.js": "/batch-translation-web/static/js/3.390f639f.chunk.js",
+    "static/js/3.390f639f.chunk.js.map": "/batch-translation-web/static/js/3.390f639f.chunk.js.map",
+    "index.html": "/batch-translation-web/index.html",
+    "static/css/main.c04ed671.chunk.css.map": "/batch-translation-web/static/css/main.c04ed671.chunk.css.map",
+    "static/js/2.dfb25c4f.chunk.js.LICENSE.txt": "/batch-translation-web/static/js/2.dfb25c4f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8bcfafe6.js",
+    "static/js/2.dfb25c4f.chunk.js",
+    "static/css/main.c04ed671.chunk.css",
+    "static/js/main.9e5edeba.chunk.js"
+  ]
+}
