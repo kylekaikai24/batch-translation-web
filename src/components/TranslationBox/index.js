@@ -1,5 +1,6 @@
 import React from 'react';
-import { languages } from '../../constants';
+// import { languages, baiduLanguages } from '../../constants';
+import useLanguages from '../../hooks/useLanguages';
 import './TranslationBox.css';
 
 const TranslationBox = ({
@@ -13,6 +14,8 @@ const TranslationBox = ({
     const [fromLang, setFromLang] = React.useState(item.from);
     const [toLang, setToLang] = React.useState(item.to);
     const [text, setText] = React.useState(item.text);
+
+    const languages = useLanguages();
 
     return (
         <div className="box" key={index} style={{ flexWrap: 'wrap' }}>
@@ -33,7 +36,7 @@ const TranslationBox = ({
                                     {languages.map((lang, idx) => (
                                         <option key={idx} value={lang.value}>{lang.label}</option>
                                     ))}
-                                </select> 
+                                </select>
                             </p>
                         </div>
                         <input type="text" className="text-input" style={{marginTop: '0.5rem'}} value={text} onChange={(e) => setText(e.target.value)} />

@@ -11,4 +11,15 @@ export const languages = [
         label: 'Eng',
         value: 'en-US'
       }
+];
+
+export const baiduLanguages = [
+      {
+        label: '简',
+        value: 'zh'
+      },
+      {
+        label: 'Eng',
+        value: 'en'
+      }
 ]
