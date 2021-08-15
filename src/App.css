@@ -4,6 +4,7 @@
 
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .container {
@@ -21,6 +22,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  height: calc(100vh - 4rem);
 }
 
 .row {
@@ -73,7 +75,7 @@
 }
 
 .boxes-wrapper {
-  height: 80vh;
+  flex: 1;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -158,4 +160,30 @@
 
 .copy-icon {
   width: 24px;
+}
+
+.back-arrow-text {
+  display: none;
+  font-size: 24px;
+  font-weight: 600;
+  color: #008b8b;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: fit-content;
+  }
+  .left-container {
+    width: calc(100vw - 2rem);
+    padding-right: 2rem;
+  }
+  .right-container {
+    width: calc(100vw - 2rem);
+    padding-right: 2rem;
+  }
+  .back-arrow-text {
+    display: block;
+  }
 }

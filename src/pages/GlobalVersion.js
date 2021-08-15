@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { getTranslation } from '../services/api';
 import TranslatedBox from '../components/TranslatedBox';
 import TranslationBox from '../components/TranslationBox';
@@ -8,13 +8,15 @@ import { languages } from '../constants';
 import { Promise } from "bluebird";
 import { plus } from "../images";
 
-const GlobalVersion = () => {
+const GlobalVersion = (props) => {
     const [text, setText] = useState('');
     const [translationArr, setTranslationArr] = useState([]);
     const [translatedArr, setTranslatedArr] = useState([]);
     const [fromLanguage, setFromLanguage] = useState('zh-HK');
     const [toLanguage, setToLanguage] = useState('en-US');
     const [loading, setLoading] = useState(false);
+
+    const rightContainerRef = useRef(null);
 
     const onAddClick = () => {
         setTranslationArr([...translationArr, {
@@ -32,6 +34,9 @@ const GlobalVersion = () => {
     };
 
     const onTranslateClick = () => {
+        if (rightContainerRef.current) {
+            rightContainerRef.current.scrollIntoView({ behavior: "smooth" })
+        }
         setLoading(true);
         let request = [];
         translationArr.forEach(text => request.push(getTranslation(text.text, text.from, text.to)));
@@ -54,6 +59,16 @@ const GlobalVersion = () => {
         const array = [...translationArr];
         array[index] = info;
         setTranslationArr(array);
+    }
+
+    const backToLeftContainer = () => {
+        if (props.appRef.current) {
+            props.appRef.current.scrollTo({
+                left: 0,
+                top: 0,
+                behavior: 'smooth'
+              })
+        }
     }
 
     return (
@@ -103,7 +118,10 @@ const GlobalVersion = () => {
                 </div>
             </div>
 
-            <div className="right-container">
+            <div className="right-container" ref={rightContainerRef}>
+                <p className="back-arrow-text" onClick={backToLeftContainer}>
+                    <span>&#8592;</span>
+                </p>
                 <div className="boxes-wrapper">
                     {loading ? (<p>Loading...</p>) : (
                         <>

@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ChinaVersion from './pages/ChinaVersion';
 import GlobalVersion from './pages/GlobalVersion';
 
@@ -18,12 +18,14 @@ function App() {
       .then(data => setCountry(data.country_code));
   };
 
+  const appRef = useRef(null);
+
   return (
-    <div className="App">
+    <div className="App" ref={appRef}>
       {country === 'CN' ? (
         <ChinaVersion />
       ) : (
-        <GlobalVersion />
+        <GlobalVersion appRef={appRef} />
       )}
     </div>
   );
