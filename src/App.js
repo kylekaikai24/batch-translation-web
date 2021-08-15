@@ -2,8 +2,10 @@ import './App.css';
 import React, { useState, useEffect, useRef } from 'react';
 import ChinaVersion from './pages/ChinaVersion';
 import GlobalVersion from './pages/GlobalVersion';
+import smoothscroll from 'smoothscroll-polyfill';
 
 function App() {
+  smoothscroll.polyfill();
   const [country, setCountry] = useState('');
 
   useEffect(() => {
@@ -23,7 +25,7 @@ function App() {
   return (
     <div className="App" ref={appRef}>
       {country === 'CN' ? (
-        <ChinaVersion />
+        <ChinaVersion appRef={appRef} />
       ) : (
         <GlobalVersion appRef={appRef} />
       )}

@@ -34,8 +34,12 @@ const GlobalVersion = (props) => {
     };
 
     const onTranslateClick = () => {
-        if (rightContainerRef.current) {
-            rightContainerRef.current.scrollIntoView({ behavior: "smooth" })
+        if (props.appRef.current) {
+            props.appRef.current.scrollTo({
+                left: window.innerWidth - 32,
+                top: 0,
+                behavior: 'smooth'
+              })
         }
         setLoading(true);
         let request = [];

@@ -5,6 +5,8 @@
 .App {
   text-align: center;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -169,6 +171,7 @@
   color: #008b8b;
   cursor: pointer;
   align-self: flex-start;
+  margin: 8px 0;
 }
 
 @media screen and (max-width: 768px) {
