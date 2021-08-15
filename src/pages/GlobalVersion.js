@@ -6,6 +6,7 @@ import TranslationBox from '../components/TranslationBox';
 import SelectBlock from '../components/SelectBlock';
 import { languages } from '../constants';
 import { Promise } from "bluebird";
+import { plus } from "../images";
 
 const GlobalVersion = () => {
     const [text, setText] = useState('');
@@ -71,7 +72,7 @@ const GlobalVersion = () => {
                         placeholder="Type here..."
                     />
                     <button className="add-button" onClick={onAddClick}>
-                        <img src="https://kylekaikai24.github.io/batch-translation-web/images/plus.svg" className="add-icon" alt="plus-icon" />
+                        <img src={plus} className="add-icon" alt="plus-icon" />
                     </button>
                 </div>
                 <div className="row">
