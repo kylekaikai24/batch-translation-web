@@ -1,11 +1,12 @@
 import '../App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { getBaiduTranslation } from '../services/api';
 import TranslatedBox from '../components/TranslatedBox';
 import TranslationBox from '../components/TranslationBox';
 import SelectBlock from '../components/SelectBlock';
 import { baiduLanguages } from '../constants';
 import { Promise } from "bluebird";
+import { plus } from "../images";
 
 const ChinaVersion = () => {
     const [text, setText] = useState('');
@@ -32,15 +33,9 @@ const ChinaVersion = () => {
 
     const onTranslateClick = () => {
         setLoading(true);
-        // let request = [];
-        // // translationArr.forEach(text => request.push(getTranslation(text.text, text.from, text.to)));
-        // translationArr.forEach(text => request.push(getBaiduTranslation(text.text, text.from, text.to)));
 
-        // Promise.all(request)
         Promise.all(getBaiduTranslation(translationArr))
             .then((res) => {
-                console.log(translationArr);
-                console.log(res);
                 setTranslatedArr(res);
                 return res;
             })
@@ -59,8 +54,6 @@ const ChinaVersion = () => {
         setTranslationArr(array);
     }
 
-    console.log(toLanguage)
-
     return (
         <div className="container">
             <div className="left-container">
@@ -73,7 +66,7 @@ const ChinaVersion = () => {
                         placeholder="Type here..."
                     />
                     <button className="add-button" onClick={onAddClick}>
-                        <img src="https://kylekaikai24.github.io/batch-translation-web/images/plus.svg" className="add-icon" alt="plus-icon" />
+                        <img src={plus} className="add-icon" alt="plus-icon" />
                     </button>
                 </div>
                 <div className="row">

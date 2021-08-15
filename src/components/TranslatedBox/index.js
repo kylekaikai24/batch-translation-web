@@ -1,6 +1,7 @@
 import React from 'react';
 import './TranslatedBox.css';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { copy } from "../../images";
 
 const TranslatedBox = ({
     fromLanguage,
@@ -19,7 +20,7 @@ const TranslatedBox = ({
                     <CopyToClipboard text={translatedText}
                         onCopy={() => setCopied(true)}>
                         <button className="copy-button">
-                            <img src="https://kylekaikai24.github.io/batch-translation-web/images/copy.svg" className="copy-icon" alt="copy" />
+                            <img src={copy} className="copy-icon" alt="copy" />
                         </button>
                     </CopyToClipboard>
                 </div>

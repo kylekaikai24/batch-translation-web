@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { getTranslation } from '../services/api';
 import TranslatedBox from '../components/TranslatedBox';
 import TranslationBox from '../components/TranslationBox';
@@ -38,8 +38,6 @@ const GlobalVersion = () => {
 
         Promise.all(request)
             .then((res) => {
-                console.log(translationArr);
-                console.log(res);
                 setTranslatedArr(res);
                 return res;
             })
@@ -57,8 +55,6 @@ const GlobalVersion = () => {
         array[index] = info;
         setTranslationArr(array);
     }
-
-    console.log(toLanguage)
 
     return (
         <div className="container">
