@@ -1,23 +1,27 @@
 {
   "files": {
     "main.css": "/batch-translation-web/static/css/main.c04ed671.chunk.css",
-    "main.js": "/batch-translation-web/static/js/main.684cf93a.chunk.js",
-    "main.js.map": "/batch-translation-web/static/js/main.684cf93a.chunk.js.map",
-    "runtime-main.js": "/batch-translation-web/static/js/runtime-main.6f29d777.js",
-    "runtime-main.js.map": "/batch-translation-web/static/js/runtime-main.6f29d777.js.map",
-    "static/js/2.dfb25c4f.chunk.js": "/batch-translation-web/static/js/2.dfb25c4f.chunk.js",
-    "static/js/2.dfb25c4f.chunk.js.map": "/batch-translation-web/static/js/2.dfb25c4f.chunk.js.map",
-    "static/js/3.6e86600f.chunk.js": "/batch-translation-web/static/js/3.6e86600f.chunk.js",
-    "static/js/3.6e86600f.chunk.js.map": "/batch-translation-web/static/js/3.6e86600f.chunk.js.map",
+    "main.js": "/batch-translation-web/static/js/main.50b66da8.chunk.js",
+    "main.js.map": "/batch-translation-web/static/js/main.50b66da8.chunk.js.map",
+    "runtime-main.js": "/batch-translation-web/static/js/runtime-main.2f972a89.js",
+    "runtime-main.js.map": "/batch-translation-web/static/js/runtime-main.2f972a89.js.map",
+    "static/js/2.47b21543.chunk.js": "/batch-translation-web/static/js/2.47b21543.chunk.js",
+    "static/js/2.47b21543.chunk.js.map": "/batch-translation-web/static/js/2.47b21543.chunk.js.map",
+    "static/js/3.69014726.chunk.js": "/batch-translation-web/static/js/3.69014726.chunk.js",
+    "static/js/3.69014726.chunk.js.map": "/batch-translation-web/static/js/3.69014726.chunk.js.map",
     "index.html": "/batch-translation-web/index.html",
     "static/css/main.c04ed671.chunk.css.map": "/batch-translation-web/static/css/main.c04ed671.chunk.css.map",
-    "static/js/2.dfb25c4f.chunk.js.LICENSE.txt": "/batch-translation-web/static/js/2.dfb25c4f.chunk.js.LICENSE.txt",
-    "static/media/plus.svg": "/batch-translation-web/static/media/plus.cac33e70.svg"
+    "static/js/2.47b21543.chunk.js.LICENSE.txt": "/batch-translation-web/static/js/2.47b21543.chunk.js.LICENSE.txt",
+    "static/media/check.svg": "/batch-translation-web/static/media/check.f94f5e2a.svg",
+    "static/media/copy.svg": "/batch-translation-web/static/media/copy.e7bfc76b.svg",
+    "static/media/edit.svg": "/batch-translation-web/static/media/edit.806b74bf.svg",
+    "static/media/plus.svg": "/batch-translation-web/static/media/plus.cac33e70.svg",
+    "static/media/remove.svg": "/batch-translation-web/static/media/remove.562b6f7b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6f29d777.js",
-    "static/js/2.dfb25c4f.chunk.js",
+    "static/js/runtime-main.2f972a89.js",
+    "static/js/2.47b21543.chunk.js",
     "static/css/main.c04ed671.chunk.css",
-    "static/js/main.684cf93a.chunk.js"
+    "static/js/main.50b66da8.chunk.js"
   ]
 }
